@@ -6,7 +6,7 @@
 # with the outside.
 
 # Set up exported variables for both **Node.js** and the browser.
-this.exports: this unless process?
+this.exports: this unless process? or packaging?
 
 exports.Scope: class Scope
 

@@ -8,7 +8,7 @@
 # Which is a format that can be fed directly into [Jison](http://github.com/zaach/jison).
 
 # Set up the Lexer for both Node.js and the browser, depending on where we are.
-if process?
+if process? or packaging?
   {Rewriter}: require('./rewriter')
   {helpers}:  require('./helpers')
 else

@@ -6,7 +6,7 @@
 # parentheses, balance incorrect nestings, and generally clean things up.
 
 # Set up exported variables for both Node.js and the browser.
-if process?
+if process? or packaging?
   {helpers}: require('./helpers')
 else
   this.exports: this

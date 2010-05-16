@@ -3,7 +3,7 @@
 # arrays, count characters, that sort of thing.
 
 # Set up exported variables for both **Node.js** and the browser.
-this.exports: this unless process?
+this.exports: this unless process? or packaging?
 helpers: exports.helpers: {}
 
 # Cross-browser indexOf, so that IE can join the party.

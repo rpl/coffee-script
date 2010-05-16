@@ -8,6 +8,9 @@
 if process?
   Scope:   require('./scope').Scope
   helpers: require('./helpers').helpers
+else if packaging?
+  Scope:   require('./scope').Scope
+  helpers: require('./helpers').helpers
 else
   this.exports: this
   helpers:      this.helpers
@@ -109,7 +112,7 @@ exports.BaseNode: class BaseNode
   # Convenience for the most common use of contains. Does the node contain
   # a pure statement?
   contains_pure_statement: ->
-    @is_pure_statement() or @contains (n) -> n.is_pure_statement()
+    @is_pure_statement() or @contains (n) -> (n.is_pure_statement() if n.is_pure_statement?)
 
   # Perform an in-order traversal of the AST. Crosses scope boundaries.
   traverse: (block) -> @traverse_children true, block

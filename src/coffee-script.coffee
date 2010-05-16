@@ -15,6 +15,12 @@ if process?
   helpers.extend global, require './nodes'
   if require.registerExtension
     require.registerExtension '.coffee', (content) -> compile content
+else if packaging? # Set up on Mozilla Jetpack SDK
+  helpers:      require('./helpers').helpers
+  helpers.extend require('cuddlefish').parentLoader.globals, require './nodes'
+  Lexer:        require('./lexer').Lexer
+  parser:       require('./parser').parser
+  ### TODO: How can we register extensions on jetpack?
 else
   this.exports: this.CoffeeScript: {}
   Lexer:        this.Lexer

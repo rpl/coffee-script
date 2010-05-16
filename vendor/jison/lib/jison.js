@@ -844,7 +844,7 @@ lrGeneratorMixin.generateCommonJSModule = function generateCommonJSModule (opt) 
     out += "\nexports.parser = "+moduleName+";";
     out += "\nexports.parse = function () { return "+moduleName+".parse.apply("+moduleName+", arguments); }";
     out += "\nexports.main = "+ String(opt.moduleMain || commonjsMain);
-    out += "\nif (require.main === module) {\n\texports.main(require(\"system\").args);\n}";
+    out += "\nif (typeof module !== 'undefined' && require.main === module) {\n\texports.main(require(\"system\").args);\n}";
     out += "\n}";
 
     return out;
