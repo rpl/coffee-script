@@ -3,6 +3,8 @@ var coffeescript = require('coffee-script');
 var securablemodule = require('securable-module');
 var csh = require('cuddlefish');
 
+var DEBUG = false;
+
 function coffee_CompositeResolveModule(base, path, ext) {
   for (var i = 0; i < this.fses.length; i++) {
     var fs = this.fses[i];
@@ -68,9 +70,15 @@ CoffeeFileSystem.prototype = {
     var content = this._fs.getFile(path);
 
     if(/\.coffee$/.test(path)) {
-      console.log(content.contents);
-      return coffeescript.compile(content.contents);
+      if (DEBUG) 
+        console.log("COFFEE: "+content.contents);
+      
+      content.contents = coffeescript.compile(content.contents);
+      
+      if (DEBUG) 
+        console.log("JAVASCRIPT: "+content.contents);
     }
+
     return content;
   }
 }
