@@ -1,0 +1,11 @@
+{
+    "id": "coffee-on-jetpack@alcacoop.it",
+    "name": "coffee-on-jetpack",
+    "fullName": "Dude, do you want a coffee jetpack?",
+    "description": "Examples of coffescript inside a jetpack module",
+    "homepage": "http://github.com/rpl/coffee-script/tree/master/examples/coffee-on-jetpack",
+    "author": "Luca Greco <luca.greco@alcacoop.it>",
+    "version": "0.0.1",
+    "license": "MPL 1.1/GPL 2.0/LGPL 2.1",
+    "dependencies": ["jetpack-core", "coffee-script"],
+}
