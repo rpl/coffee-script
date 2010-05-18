@@ -1,0 +1,14 @@
+This is an experimental fork to tweak coffee-script commonjs modules to work
+on jetpack-sdk.
+
+To test jetpack-sdk + coffe-script you can:
+
+     cd YOUR_JETPACK_SDK
+     source bin/activate
+     cd ..
+     git clone http://github.com/rpl/coffee-script.git coffee-script
+     cd coffee-script/examples/coffee-on-jetpack
+     cfx run -a xulrunner -b /your/path/firefox
+
+An interesting feature of this example is the coffee-loader module 
+(examples/coffee-on-jetpack/lib/coffee-loader.js)
